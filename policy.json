@@ -1,6 +1,6 @@
 {	"expiration" : {"day":1},
 	"conditions": [ ["starts-with", "$key", "radek.student/"],
-    				 {"bucket": "lab4-weeia"}, 
+    				 {"bucket": "rutkowski"}, 
     				 {"acl": "private"},
     				 {"success_action_redirect": "http://localhost:8080"},   
     				 ["content-length-range", 0, 1048576]
