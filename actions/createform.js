@@ -11,11 +11,9 @@ var task = function(request, callback){
 	//1. load configuration
 	var awsConfig = helpers.readJSONFile(AWS_CONFIG_FILE);
 	var policyData = helpers.readJSONFile(POLICY_FILE);
-	policyData.conditions.push({"ip":request.ip});
-	policyData.conditions.push({"name":"pawel"});
-	policyData.conditions.push({"surname":"rutkowski"});
-
-
+	policyData.conditions.push({"x-amz-meta-ip":request.ip});
+	policyData.conditions.push({"x-amz-meta-name":"pawel"});
+	policyData.conditions.push({"x-amz-meta-surname":"rutkowski"});
 
 	//2. prepare policy
 	var policy = new Policy(policyData);
